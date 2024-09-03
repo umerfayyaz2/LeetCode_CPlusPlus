@@ -12,7 +12,7 @@ int window_max_length_finder(vector<int> nums, int target_sum)
 
     for (int right_index = 0; right_index < nums.size(); right_index++)
     {
-        current_sum += nums[right_index]; // will add the curr elem to the sub-araray / window
+        current_sum += nums[right_index]; // will add the curr elem to the sub-array / window
 
         while (current_sum > target_sum) // if the current_sum  is greater than target_sum
         {

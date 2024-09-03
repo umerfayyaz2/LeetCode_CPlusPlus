@@ -3,15 +3,13 @@
 
 using namespace std;
 
-vector<int> runningSum(vector<int> nums)
+vector<int> runningSum(vector<int> &nums)
 {
-    vector<int> runningSum(nums.size());
-
-    runningSum[0] = nums[0]; // here first elem will remain the same
-
+    // Starting the second element and update each element to be the running sum
     for (int i = 1; i < nums.size(); i++)
     {
-        runningSum[i] = runningSum[i - 1] + nums[i]; // this will calc the running sum by adding curr elems
+        nums[i] += nums[i - 1]; // Add the previous elem's value to the current element
     }
-    return runningSum;
+
+    return nums; // Return the modified nums array
 }
