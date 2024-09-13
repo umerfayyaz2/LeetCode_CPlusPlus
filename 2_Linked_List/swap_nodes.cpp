@@ -14,34 +14,30 @@ public:
         if (!head || !head->next)
             return head;
 
-        // The new head will be the second node
-        ListNode *newHead = head->next;
+        // Create a dummy node to simplify swapping logic at the head
+        ListNode *dummy = new ListNode(-1);
+        dummy->next = head;
 
-        // Pointers to track current and next pair
-        ListNode *prev = nullptr;
-        ListNode *current = head;
+        // Pointer to the node before the current pair
+        ListNode *prev = dummy;
 
-        // Iterate while there are at least two nodes to swap
-        while (current && current->next)
+        // Iterate through the list while there are pairs to swap
+        while (prev->next && prev->next->next)
         {
-            ListNode *nextPair = current->next->next; // Save the node after the pair
-            ListNode *second = current->next;         // The second node in the current pair
+            // Identify the two nodes to swap
+            ListNode *first = prev->next;
+            ListNode *second = first->next;
 
-            // Swap the current pair
-            second->next = current;   // Point the second node to the first node
-            current->next = nextPair; // Point the first node to the next pair
+            // Perform the swap
+            first->next = second->next; // Link first node to the next of second
+            second->next = first;       // Link second node to first
+            prev->next = second;        // Link prev to second (new head of this pair)
 
-            // Connect the previous pair with the current swapped pair
-            if (prev)
-            {
-                prev->next = second;
-            }
-
-            // Move pointers for the next swap
-            prev = current;     // The current node becomes the previous node
-            current = nextPair; // Move to the next pair
+            // Move the prev pointer to the end of the swapped pair
+            prev = first; // first is now after second
         }
 
-        return newHead; // Return the new head, which is the second node
+        // Return the new head (the second node of the original list)
+        return dummy->next;
     }
 };
