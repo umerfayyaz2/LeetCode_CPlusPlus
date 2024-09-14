@@ -30,7 +30,7 @@ int main()
     head->next->next->next = new nodeType(4);
     head->next->next->next->next = new nodeType(5);
 
-    cout << "Middle node valueue: " << find_middle_node(head) << endl;
+    cout << "Middle node value: " << find_middle_node(head) << endl;
 
     return 0;
 }
