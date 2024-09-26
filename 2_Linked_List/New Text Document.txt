@@ -1,0 +1,13 @@
+Leet Code ToDos:
+
+-Intersection of two linked lists
+-Linked List Cycle
+- Odd even Linked List
+- Linked List Cycle II
+- Find length of loop (GFG)
+- 142. Linked List Cycle II
+- 13 - Detect Loop in Linked List (GFG) 
+- 15- Remove Loop in linked list (GFG)
+- 19-Remove Nth node from end
+- 82. Remove Duplicates from Sorted List II
+- 61. re-Rotate List 
