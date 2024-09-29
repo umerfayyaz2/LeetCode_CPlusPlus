@@ -1,3 +1,7 @@
+#include <queue>
+#include <iostream>
+using namespace std;
+
 class MyStack
 {
 private:
@@ -61,3 +65,17 @@ public:
         return q1.empty();
     }
 };
+
+int main()
+{
+    MyStack stack;
+    stack.push(1);
+    stack.push(2);
+    stack.push(3);
+    cout << "Top element: " << stack.top() << endl;                       // Should print 3
+    cout << "Popped element: " << stack.pop() << endl;                    // Should print 3
+    cout << "Top element: " << stack.top() << endl;                       // Should print 2
+    cout << "Is stack empty? " << (stack.empty() ? "Yes" : "No") << endl; // Should print No
+
+    return 0;
+}
